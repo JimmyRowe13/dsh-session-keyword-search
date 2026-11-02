@@ -115,3 +115,20 @@ DSH_SESSION_KEYWORD_SEARCH_SELFTEST="槟榔 价格" dsh <profile> ...
 ## 许可
 
 MIT。
+
+## 发布到插件市场
+
+DSH 没有内置的“官方市场”提交入口：市场是一个**索引读取器**，读取用户配置的索引 JSON（`plugin-market.indexes`）。本仓库因此自带一份 format-1 索引：
+
+- 索引文件：[`market/index.json`](market/index.json)
+- 指向的安装源：git，pin 到发布 commit（`marketInstallTarget` 会生成 `git+https://…#<sha>`）
+- 可用镜像地址（`raw.githubusercontent.com` 在部分网络下不可达）：
+  `https://cdn.jsdelivr.net/gh/JimmyRowe13/dsh-session-keyword-search@master/market/index.json`
+
+使用方式：启用 `@deepseek-ai/dsh-experimental-plugin-market-bundle`，把上面的 URL 加为索引源，即可在插件市场的“发现”里看到并安装。
+
+发新版本的步骤：
+
+1. 改 `package.json` 的 `version`，提交并 `git tag vX.Y.Z && git push --tags`；
+2. 取 `git rev-parse HEAD`，用它更新 `market/index.json` 里 `versions[0]` 的 `commit`、`version` 与 `publishTimestamp`；
+3. 提交并推送；jsDelivr 对 `@master` 有缓存，必要时用 `@<tag>` 强制刷新：`https://cdn.jsdelivr.net/gh/JimmyRowe13/dsh-session-keyword-search@vX.Y.Z/market/index.json`。

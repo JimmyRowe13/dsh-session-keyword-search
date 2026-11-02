@@ -163,3 +163,16 @@ DSH_SESSION_KEYWORD_SEARCH_SELFTEST="槟榔 价格" dsh <profile> ...
 ## License
 
 MIT.
+
+## Publishing to the plugin market
+
+DSH ships no central submission queue: the market is a **reader** for index JSON documents the user configures (`plugin-market.indexes`). This repository therefore carries a format-1 index:
+
+- index: [`market/index.json`](market/index.json)
+- install source: git, pinned to the release commit (`marketInstallTarget` produces `git+https://…#<sha>`)
+- mirror for networks where `raw.githubusercontent.com` is unreachable:
+  `https://cdn.jsdelivr.net/gh/JimmyRowe13/dsh-session-keyword-search@master/market/index.json`
+
+Enable `@deepseek-ai/dsh-experimental-plugin-market-bundle`, add the URL as a source, and the plugin shows up under the market's discover tab.
+
+Release checklist: bump `version`, commit, `git tag vX.Y.Z && git push --tags`, then point `market/index.json` at the new commit (`versions[0].commit`, `version`, `publishTimestamp`).
