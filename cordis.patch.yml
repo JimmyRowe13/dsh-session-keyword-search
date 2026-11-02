@@ -1,0 +1,34 @@
+# Bundle layer for dsh-session-keyword-search.
+#
+# This file is applied automatically when the package is listed in the profile's
+# `dsh.profile.bundles`. Do not copy this insert block into the profile's own
+# cordis.patch.yml: duplicating the entry id makes two layers fight over the
+# same row. Override the row by id instead:
+#
+#   - id: session-keyword-search
+#     config:
+#       takeover: off
+#
+- insert:
+    - id: session-keyword-search
+      name: dsh-session-keyword-search
+      config:
+        # `auto` takes over the existing sidebar search box; `off` leaves the
+        # host's own provider in place (the index is then never built).
+        takeover: auto
+        # Only user and assistant message text is indexed by default; the
+        # harness fills 70% of assistant events with tool calls and no text.
+        includeToolEvents: false
+        # Machine-injected user messages would make every template word match
+        # every session, so they are skipped by leading-text prefix.
+        injectedPrefixes:
+          - Current runtime context
+          - Time sampled while preparing
+          - <system-reminder>
+          - "[dsh-mnemon:"
+          - "[mnemon:"
+        injectedPatterns: []
+        excludeSessionIds: []
+        snippetChars: 240
+        maxTokens: 8
+        refreshDebounceMs: 5000

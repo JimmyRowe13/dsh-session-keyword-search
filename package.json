@@ -1,0 +1,79 @@
+{
+  "name": "dsh-session-keyword-search",
+  "version": "0.4.3",
+  "description": "Substring keyword search across every DSH session, CJK included. Takes over the existing sidebar search box with a fast local index and degrades to stock behaviour when it cannot.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./core": "./lib/core.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/",
+    "locale/",
+    "scripts/",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "deepseek-harness-plugin",
+    "dsh-plugin",
+    "dsh-bundle",
+    "session-search",
+    "keyword-search",
+    "full-text-search",
+    "cross-session",
+    "conversation-search",
+    "history-search",
+    "cjk",
+    "chinese",
+    "substring",
+    "sqlite",
+    "local-first"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimmyRowe13/dsh-session-keyword-search.git"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5",
+    "@deepseek-ai/schemastery": "*",
+    "@deepseek-ai/dsh-session-query": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-session-query": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "author": "JimmyRowe13",
+  "homepage": "https://github.com/JimmyRowe13/dsh-session-keyword-search#readme",
+  "bugs": {
+    "url": "https://github.com/JimmyRowe13/dsh-session-keyword-search/issues"
+  }
+}
