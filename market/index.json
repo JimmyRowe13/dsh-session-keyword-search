@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "title": {
+    "en": "DSH plugins by JimmyRowe13",
+    "zh": "JimmyRowe13 的 DSH 插件"
+  },
+  "description": {
+    "en": "Community index for DeepSeek Harness plug-ins published by JimmyRowe13.",
+    "zh": "JimmyRowe13 发布的 DeepSeek Harness 插件索引。"
+  },
+  "metadata": {
+    "categories": {
+      "search": {
+        "title": {
+          "en": "Search",
+          "zh": "检索"
+        }
+      }
+    },
+    "labels": {
+      "cjk": {
+        "title": {
+          "en": "CJK text",
+          "zh": "中日韩文本"
+        }
+      },
+      "sessions": {
+        "title": {
+          "en": "Session history",
+          "zh": "会话历史"
+        }
+      }
+    },
+    "sortKeys": {}
+  },
+  "plugins": [
+    {
+      "name": "dsh-session-keyword-search",
+      "title": {
+        "en": "Session keyword search",
+        "zh": "会话关键词检索"
+      },
+      "description": {
+        "en": "Substring search across every DSH session, Chinese included. Takes over the sidebar search box, highlights the query in result rows and jumps to the matched message.",
+        "zh": "跨全部会话的子串检索，中文可用。接管侧边栏搜索框，结果行高亮命中词，点开直接跳到命中消息。"
+      },
+      "icon": "icon.svg",
+      "author": "JimmyRowe13",
+      "homepage": "https://github.com/JimmyRowe13/dsh-session-keyword-search#readme",
+      "repository": {
+        "url": "https://github.com/JimmyRowe13/dsh-session-keyword-search"
+      },
+      "metadata": {
+        "category": "search",
+        "keywords": [
+          "session",
+          "search",
+          "keyword",
+          "history",
+          "cjk",
+          "chinese",
+          "substring"
+        ],
+        "labels": [
+          "cjk",
+          "sessions"
+        ]
+      },
+      "versions": [
+        {
+          "version": "0.4.3",
+          "publishTimestamp": 1793635563,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/JimmyRowe13/dsh-session-keyword-search",
+            "commit": "59e988cc4b94c7b3ccf0154ff6d41ec4910831b4"
+          },
+          "engines": {
+            "dsh": ">=0.2.0"
+          }
+        }
+      ]
+    }
+  ]
+}
