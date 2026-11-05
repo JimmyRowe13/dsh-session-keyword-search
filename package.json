@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-keyword-search",
-  "version": "0.4.3",
+  "version": "0.4.7",
   "description": "Substring keyword search across every DSH session, CJK included. Takes over the existing sidebar search box with a fast local index and degrades to stock behaviour when it cannot.",
   "type": "module",
   "main": "lib/index.js",
