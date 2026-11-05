@@ -68,12 +68,12 @@
       },
       "versions": [
         {
-          "version": "0.4.3",
-          "publishTimestamp": 1793635563,
+          "version": "0.4.7",
+          "publishTimestamp": 1793892877,
           "source": {
             "type": "git",
             "url": "https://github.com/JimmyRowe13/dsh-session-keyword-search",
-            "commit": "59e988cc4b94c7b3ccf0154ff6d41ec4910831b4"
+            "commit": "40a2aa685e4f46770fc4bf2458589166d215d953"
           },
           "engines": {
             "dsh": ">=0.2.0"
